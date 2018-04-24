@@ -1,0 +1,343 @@
+//Main Page
+.general-info {
+  color: #333333;
+  $color1 : rgba(grey, 0.1);
+  $color2 : rgba(grey, 0.15);
+  background:
+          linear-gradient(
+                          -45deg,
+                          $color1 0%, $color1 25%,
+                          $color2 25%, $color2 50%,
+                          $color1 50%, $color1 75%,
+                          $color2 75%, $color2 100%
+          );
+  background-size: 8px 8px;
+  .general-header {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 15vh;
+
+    h3 {
+      margin-top: 30px;
+      font-weight: bold;
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      &:after {
+        content: "";
+        display: block;
+        clear: both;
+        height: 2px;
+        width: 100%;
+        border-radius: 10%;
+        background: #FF8C00;
+      }
+    }
+  }
+  .general-services {
+    .services-row-1,
+    .services-row-2 {
+      margin-top: 5%;
+
+      .service {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        .service-image {
+          width: 10vw;
+          height: 10vw;
+          background-image: url("../images/wheel.png");
+          background-position: center;
+          background-repeat: no-repeat;
+          background-size: contain;
+          animation: rollItSlowly 60s alternate-reverse infinite;
+        }
+        .service-description {
+          text-align: center;
+          h4 {
+            color: #FF8C00;
+          }
+
+        }
+      }
+    }
+  }
+}
+
+@keyframes rollItSlowly {
+  0%{
+    transform: rotate(0deg);
+  }
+  100%{
+    transform: rotate(1080deg);
+  }
+}
+
+//Shop
+.shop{
+  height: 60%;
+  background: url("../images/tyre_shop.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center top;
+  position: relative;
+  &:before,
+  &:after{
+    content: '';
+    display: block;
+    clear: both;
+    width: 100%;
+    height: 3px;
+    background: #FF8C00;
+  }
+  &:after{
+    position: absolute;
+    bottom: 0;
+  }
+  .shop_content{
+    width: 60%;
+    height: 50%;
+    background: rgba(white, 0.6);
+    position: absolute;
+    bottom: 10%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    h1{
+      font-family: 'Russo One', sans-serif;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      font-weight: 900;
+      font-size: 3.5em;
+      text-align: center;
+      margin: 10px 0 0 0;
+      color: #FF8C00;
+      text-shadow: 2px 1px black;
+    }
+    p{
+      color: #333333;
+      text-align: center;
+    }
+    .button{
+      margin: 5px 0;
+      border: 1px solid #6c757d;
+      width: 35%;
+      height: 40px;
+      border-radius: 30px;
+      a{
+        display: block;
+        height: 100%;
+        text-align: center;
+        line-height: 40px;
+        text-decoration: none;
+        color: #1b1e21;
+        position: relative;
+        .arrow {
+          position: absolute;
+          top: 50%;
+          left: 70%;
+          width: 3vmin;
+          height: 3vmin;
+          background: transparent;
+          border-top: 1vmin solid #6c757d;
+          border-right: 1vmin solid #6c757d;
+          box-shadow: 0 0 0 lightgray;
+          transition: all 200ms ease;
+
+          &.right {
+            right: 0;
+            transform: translate3d(0,-50%,0) rotate(45deg);
+          }
+
+          &:before { // for better hit area
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-40%,-60%) rotate(45deg);
+            width: 200%;
+            height: 200%;
+          }
+        }
+      }
+      &:hover,
+      &:active{
+        border: 1px solid #FF8C00;
+        box-shadow: 0 0 1px 1px white;
+        a{
+          color: whitesmoke;
+          font-weight: bolder;
+          .arrow {
+            border-color: #FF8C00;
+            box-shadow: 0.5vmin -0.5vmin 0 white;
+          }
+        }
+      }
+    }
+  }
+}
+
+
+//Animated Shop Banner
+
+.animatable {
+  visibility: hidden;
+  -webkit-animation-play-state: paused;
+  -moz-animation-play-state: paused;
+  -ms-animation-play-state: paused;
+  -o-animation-play-state: paused;
+  animation-play-state: paused;
+}
+
+.animated {
+  visibility: visible;
+  -webkit-animation-fill-mode: both;
+  -moz-animation-fill-mode: both;
+  -ms-animation-fill-mode: both;
+  -o-animation-fill-mode: both;
+  animation-fill-mode: both;
+
+  -webkit-animation-duration: 1s;
+  -moz-animation-duration: 1s;
+  -ms-animation-duration: 1s;
+  -o-animation-duration: 1s;
+  animation-duration: 1s;
+
+  -webkit-animation-play-state: running;
+  -moz-animation-play-state: running;
+  -ms-animation-play-state: running;
+  -o-animation-play-state: running;
+  animation-play-state: running;
+}
+
+@-webkit-keyframes bounceInLeft {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateX(-2000px);
+  }
+  60% {
+    -webkit-transform: translateX(20px);
+  }
+
+  80% {
+    -webkit-transform: translateX(-5px);
+  }
+
+  100% {
+    opacity: 1;
+    -webkit-transform: translateX(0);
+  }
+}
+
+@-moz-keyframes bounceInLeft {
+  0% {
+    opacity: 0;
+    -moz-transform: translateX(-2000px);
+  }
+
+  60% {
+    -moz-transform: translateX(20px);
+  }
+
+  80% {
+    -moz-transform: translateX(-5px);
+  }
+
+  100% {
+    opacity: 1;
+    -moz-transform: translateX(0);
+  }
+}
+
+@-o-keyframes bounceInLeft {
+  0% {
+    opacity: 0;
+    -o-transform: translateX(-2000px);
+  }
+
+  60% {
+    opacity: 1;
+    -o-transform: translateX(20px);
+  }
+
+  80% {
+    -o-transform: translateX(-5px);
+  }
+
+  100% {
+    opacity: 1;
+    -o-transform: translateX(0);
+  }
+}
+
+@keyframes bounceInLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-2000px);
+  }
+
+  60% {
+    transform: translateX(20px);
+  }
+
+  80% {
+    transform: translateX(-5px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.animated.animationDelay{
+  animation-delay:.4s;
+  -webkit-animation-delay:.4s;
+}
+.animated.animationDelayMed{
+  animation-delay:1.2s;
+  -webkit-animation-delay:1.2s;
+}
+.animated.animationDelayLong{
+  animation-delay:1.6s;
+  -webkit-animation-delay:1.6s;
+}
+
+.animated.bounceInLeft {
+  -webkit-animation-name: bounceInLeft;
+  -moz-animation-name: bounceInLeft;
+  -o-animation-name: bounceInLeft;
+  animation-name: bounceInLeft;
+}
+
+@media only screen and (max-width: 1000px) {
+  .shop{
+    .shop_content{
+      h1{
+        font-size: 2em;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 700px) {
+  .shop{
+    .shop_content{
+      width: 100%;
+    }
+  }
+}
+
+@media only screen and (max-width: 700px) {
+  .shop{
+    .shop_content{
+      .button{
+        width: 50%;
+      }
+    }
+  }
+}

@@ -1,0 +1,89 @@
+//Contact
+.contact{
+  color: #989898;
+  h3{
+    position: relative;
+    flex-grow: 1;
+    margin: 3% 0;
+    font-weight: bold;
+    letter-spacing: 3px;
+    &:after {
+      content: '';
+      display: block;
+      clear: both;
+      width: 100%;
+      height: 3px;
+      background: #FF8C00;
+    }
+  }
+
+  h5{
+    font-weight: bolder;
+    letter-spacing: 2px;
+  }
+}
+
+.map + footer{
+  margin: 0;
+}
+
+
+.telephone,
+.hours{
+  display: flex;
+  align-items: center;
+  margin: 10px 0;
+}
+.contact_icon,
+.content{
+  display: inline-block;
+  p{
+    line-height: 30px;
+    margin: 0;
+  }
+}
+.contact_icon{
+  margin-right: 10px;
+}
+.content{
+  width: 79%;
+}
+.phone,
+.clock{
+  width: 20px;
+  height: 20px;
+  background-image: url("../images/phone.svg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  display: inline-block;
+}
+.clock{
+  background-image: url("../images/clock.svg");
+  margin-top: 0;
+}
+
+.hours > .contact_icon{
+  height: 50px;
+}
+
+.contact_background{
+  .background{
+    background: url("../images/tyres.jpg");
+    background-position: center 30%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 200px;
+    position: relative;
+    &:after{
+      content: '';
+      display: block;
+      clear: both;
+      width: 100%;
+      height: 3px;
+      background-color: #FF8C00 ;
+      position: absolute;
+      bottom: 0;
+    }
+  }
+}

@@ -1,0 +1,26 @@
+@import "layout.scss";
+@import "page-header.scss";
+@import "main_width.scss";
+@import "footer.scss";
+@import "slider.scss";
+@import "contact.scss";
+@import "home.scss";
+@import "offer.scss";
+
+#map {
+  height: 400px;
+  width: 100%;
+}
+
+.sticky{
+  position: fixed;
+  width: 100%;
+  z-index: 1;
+  top:0;
+}
+
+
+
+
+
+
