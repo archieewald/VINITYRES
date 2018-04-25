@@ -143,9 +143,11 @@ function initMap() {
 
         ]
     });
+    var image = 'http://gkv.com/wp-content/uploads/leaflet-maps-marker-icons/map_marker-orange-small.png';
     var marker = new google.maps.Marker({
         position: uluru,
         map: map,
+        icon: image
     });
 }
 
