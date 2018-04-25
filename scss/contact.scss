@@ -27,7 +27,7 @@
   margin: 0;
 }
 
-
+.email,
 .telephone,
 .hours{
   display: flex;
@@ -37,6 +37,17 @@
 .contact_icon,
 .content{
   display: inline-block;
+  a{
+    color: #989898;
+    text-decoration: none;
+    &:hover{
+      text-decoration: none;
+      color: #FF8C00;
+    }
+    &:active{
+      color: #FF8C00;
+    }
+  }
   p{
     line-height: 30px;
     margin: 0;
@@ -48,6 +59,7 @@
 .content{
   width: 79%;
 }
+.mail,
 .phone,
 .clock{
   width: 20px;
@@ -61,6 +73,9 @@
 .clock{
   background-image: url("../images/clock.svg");
   margin-top: 0;
+}
+.mail{
+  background-image: url("../images/mail.svg");
 }
 
 .hours > .contact_icon{
@@ -86,4 +101,14 @@
       bottom: 0;
     }
   }
+}
+
+.icons{
+  background: #FF8C00;
+  border-top: 1px solid rgba(#555555, 0.5);
+  padding: 0 10%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 60px;
 }
